@@ -1,0 +1,31 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+    ofstream outfile("C:\\Users\\abc\\Documents\\Test\\test_3.txt");
+
+    if(!outfile)
+    {
+        cout<<"failed"<<endl;
+        return 1;
+    }
+
+    //п╢нд╪Ч
+    outfile<<"hello";
+    char ch[]="henu";
+    int i=0;
+    while(ch[i]!=0)
+    {
+        outfile.put(ch[i]);
+        i++;
+    }
+
+    char ch1[]="university";
+    outfile<<ch1<<endl;
+
+    outfile.close();
+    return 0;
+
+}

@@ -1,0 +1,16 @@
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+    char c;
+    cout<<"enter a sentence:"<<endl;
+
+    while(1){
+        c=cin.get();//cin.get(c)
+        if(c=='\n') break;
+        else cout<<c;
+    }
+    return 0;
+}

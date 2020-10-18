@@ -1,0 +1,25 @@
+#include <vector>
+#include <iostream>
+#include <fstream>
+#include <string>
+
+namespace std;
+
+int main()
+{
+    ifstream myfile("C:\\Users\\abc\\Documents\\Test\\test_1.txt");
+    ofstream outfile("C:\\Users\\abc\\Documents\\Test\\test_1_p.txt",ios:app);
+
+    if(!myfile.is_open())
+    {
+        cout<<"文件未成功打开"<<endl;
+    }
+    while(getline(myfile))
+    {
+        outfile<<endl;
+    }
+
+    myfile.close();
+    outfile.close();
+    return 0;
+}

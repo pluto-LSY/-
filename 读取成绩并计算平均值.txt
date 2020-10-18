@@ -1,0 +1,43 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main()
+{
+
+    char ch_1[20];
+    int math,eng,phy;
+
+    ifstream infile("C:\\Users\\abc\\Documents\\Test\\test_4.txt");
+    ofstream outfile("C:\\Users\\abc\\Documents\\Test\\test_4_p.txt",ios::app);
+
+    if(!infile.is_open())
+    {
+        cout<<"failed"<<endl;
+        return 1;
+    }
+
+    //读取文件
+    while(infile){
+        //读取文件中的一行信息
+        infile>>ch_1>>math>>eng>>phy;
+        //输出到另一文件
+        if(infile.is_open())
+        {
+            float avg=1.0*(math+eng+phy)*3;
+            outfile<<ch_1<<'\t'<<math<<'\t'<<eng<<'\t'<<phy<<'\t'<<avg<<endl;
+
+        }
+
+    }
+
+    //关闭文件
+    infile.close();
+    outfile.close();
+
+    return 0;
+
+
+
+}
